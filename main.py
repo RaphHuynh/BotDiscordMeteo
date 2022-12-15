@@ -200,6 +200,7 @@ async def commands(ctx):
     async with channel.typing():
         embed=discord.Embed(title="Commandes pour le bot",color=0x4dff4d)
         embed.add_field(name="!meteo Nom De la ville",value=f"Météo actuel dans la ville.",inline=False)
+        embed.add_field(name="!meteoaujourdhui Nom De La Vile", value="Météo d'aujourd'hui sous 24h", inline=False)
         embed.add_field(name="!meteodemain Nom de la ville",value=f"Météo pour demain de la ville demandée.",inline=False)
         embed.add_field(name="!previsionsemaine Nom de la ville",value=f"Prevision des 5 prochains jours de la ville demandée.",inline=False)
         embed.set_footer(text=f"Requête par {ctx.author.name}")
