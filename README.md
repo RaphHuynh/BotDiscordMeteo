@@ -3,11 +3,11 @@
 Voici un script pour réaliser un bot discord avec l'api de openweathermap
 
 ## <span style="color: #FF5733">Liste des commandes</span>
-- !commands
-- !meteo nom_de_la_ville
-- !meteoaujourdhui nom_de_la_ville
-- !meteodemain nom_de_la_ville
-- !previsionsemaine nom_de_ma_ville
+- /command
+- /meteo
+- /prevision
+- /prevision-demain
+- /prevision-semaine
 
 ### <span style="color: #FFC300">Commands</span>
 Affiche toute les commandes

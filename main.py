@@ -5,7 +5,7 @@ import requests
 
 from config import *
 
-bot = discord.Bot(debug_guilds=[1040767558573371392])
+bot = discord.Bot()
 
 
 @bot.event
