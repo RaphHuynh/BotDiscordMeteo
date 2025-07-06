@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  discord-weather-bot:
+    build: .
+    container_name: discord-weather-bot
+    restart: unless-stopped
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+      - BASE_URL=${BASE_URL:-http://api.openweathermap.org/data/2.5/weather?}
+      - BASE_URL_FORECAST=${BASE_URL_FORECAST:-http://api.openweathermap.org/data/2.5/forecast?}
+    volumes:
+      # Optionnel: pour persister les graphiques temporaires
+      - ./data:/app/data
+    networks:
+      - bot-network
+    # Healthcheck pour vérifier que le bot est en cours d'exécution
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  bot-network:
+    driver: bridge
+
+volumes:
+  bot-data:
